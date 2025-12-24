@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tydon Technologies Pvt. Ltd. | Official Website</title>
+    <title>Tydon Technologies Pvt. Ltd. | Innovating the Future</title>
     <style>
         :root {
-            --primary: #0f172a;
-            --secondary: #334155;
-            --accent: #2563eb;
-            --light: #f8fafc;
+            /* Meta/Telegram inspired color palette */
+            --primary: #0f172a;       /* Deep Navy */
+            --accent: #3b82f6;        /* Tech Blue */
+            --bg-light: #f8fafc;
+            --text-gray: #64748b;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: var(--primary);
@@ -20,173 +21,238 @@
             line-height: 1.6;
         }
         
-        /* Navigation */
+        /* Modern Navigation */
         nav {
-            background: #fff;
-            padding: 20px 5%;
-            border-bottom: 1px solid #e2e8f0;
+            padding: 25px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .logo span { color: var(--accent); }
 
-        /* Hero Section */
+        /* Big Tech Hero Section */
         .hero {
-            background: var(--primary);
-            color: white;
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
+            background: linear-gradient(180deg, #fff 0%, #f0f9ff 100%);
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { font-size: 1.2rem; color: #cbd5e1; max-width: 600px; margin: 0 auto; }
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #0f172a, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
         /* Container */
-        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 
-        /* Section Titles */
-        h2 { font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 50px; }
+        /* Section Styling */
+        .section-header { margin-bottom: 40px; }
+        .section-header h2 { font-size: 2rem; margin-bottom: 10px; }
+        .section-header p { color: var(--text-gray); }
 
-        /* App Grid (Portfolio) */
-        .app-grid {
+        /* Product Grid */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
         }
-        .app-card {
+        .card {
+            background: white;
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 25px;
-            transition: transform 0.2s;
-            background: var(--light);
-            display: flex;
-            flex-direction: column;
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .app-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .app-title { font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; display: block; color: var(--primary); }
-        .app-desc { flex-grow: 1; font-size: 0.95rem; color: var(--secondary); margin-bottom: 20px; }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--accent);
+        }
         
-        .tag { 
+        .card-tag {
             display: inline-block;
-            background: #dbeafe; color: #1e40af; 
-            padding: 4px 10px; border-radius: 20px; 
-            font-size: 0.75rem; font-weight: 700;
-            margin-bottom: 10px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
         }
-        .tag.community { background: #dcfce7; color: #166534; } /* Green for Union */
+        .tag-blue { background: #eff6ff; color: #2563eb; }
+        .tag-green { background: #f0fdf4; color: #166534; }
+        .tag-purple { background: #faf5ff; color: #7e22ce; }
 
-        /* Links area inside card */
-        .card-links {
-            font-size: 0.85rem;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 15px;
+        .card h3 { margin: 0 0 10px 0; font-size: 1.4rem; }
+        .card p { color: var(--text-gray); font-size: 0.95rem; margin-bottom: 20px; }
+        
+        .card-links { font-size: 0.85rem; padding-top: 15px; border-top: 1px solid #f1f5f9; }
+        .card-links a { color: var(--primary); text-decoration: none; margin-right: 15px; font-weight: 500; transition: color 0.2s; }
+        .card-links a:hover { color: var(--accent); }
+
+        /* Coming Soon Badge */
+        .coming-soon {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-size: 0.7rem;
+            font-weight: bold;
         }
-        .card-links a { color: var(--accent); text-decoration: none; font-weight: 500; margin-right: 10px; }
-        .card-links a:hover { text-decoration: underline; }
 
-        /* Verification Box (Critical) */
-        .legal-box {
-            background: #f1f5f9;
-            border-left: 4px solid var(--accent);
-            padding: 20px;
+        /* Legal Verification Box (Critical) */
+        .verification-wrapper {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+        }
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
             margin-top: 20px;
-            border-radius: 0 8px 8px 0;
         }
-        .data-row { margin-bottom: 8px; font-size: 0.95rem; }
-        .label { font-weight: 700; color: var(--secondary); display: inline-block; width: 140px; }
+        .legal-item label { display: block; font-size: 0.8rem; color: var(--text-gray); font-weight: 600; text-transform: uppercase; margin-bottom: 5px; }
+        .legal-item div { font-weight: 500; color: var(--primary); font-size: 0.95rem; }
 
         /* Footer */
         footer {
-            background: var(--primary);
-            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 80px;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            margin-top: 60px;
         }
-        footer a { color: white; margin: 0 10px; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">TYDON<span>TECH</span></a>
-        <div>
-            <span style="color: var(--secondary); font-size: 0.9rem; font-weight: 500;">Est. 2025</span>
+        <a href="#" class="logo">TYDON<span>TECHNOLOGIES</span></a>
+        <div style="font-size: 0.9rem; font-weight: 500;">
+            Building the Future
         </div>
     </nav>
 
     <div class="hero">
-        <h1>Transforming Public Distribution</h1>
-        <p>We build secure, data-driven mobile solutions for India's Ration ecosystem and community management.</p>
+        <h1>Technology That Connects<br>Billions of Lives</h1>
+        <p>We are a diverse technology company building the next generation of social, utility, and enterprise ecosystems. From local governance to global communication.</p>
     </div>
 
     <div class="container">
 
-        <h2 id="products">Our Products</h2>
-        <div class="app-grid">
+        <div class="section-header">
+            <h2>Our Ecosystem</h2>
+            <p>Diverse platforms solving complex problems at scale.</p>
+        </div>
+
+        <div class="grid">
             
-            <div class="app-card">
-                <div>
-                    <span class="tag">Business Utility</span>
-                </div>
-                <span class="app-title">Ration Shop Manager</span>
-                <p class="app-desc">
-                    A simple, powerful app built for Fair Price Shop dealers to digitally manage customers, stock, and monthly sales—ensuring 100% ration distribution, faster operations, and zero paperwork, all from one secure mobile dashboard.
-                </p>
+            <div class="card">
+                <div class="coming-soon">NEXT</div>
+                <span class="card-tag tag-purple">Communication</span>
+                <h3>Tydon Messenger</h3>
+                <p>Our upcoming flagship messaging platform. Secure, cloud-synced, and built for speed. Redefining how the world chats, shares, and connects.</p>
                 <div class="card-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms</a>
-                    <a href="delete-account.html">Support</a>
+                    <span>Coming 2026</span>
                 </div>
             </div>
 
-            <div class="app-card">
-                <div>
-                    <span class="tag community">Community Platform</span>
-                </div>
-                <span class="app-title">Ration Dukandar Manch (Mumbai)</span>
-                <p class="app-desc">
-                    The official digital union platform for Mumbai's 3,000+ Ration Shop owners. Features include instant official circulars (GRs), anonymous local grievance reporting, offline news access, and a direct help-line to Union leadership.
-                </p>
+            <div class="card">
+                <span class="card-tag tag-blue">Social Community</span>
+                <h3>Ration Dukandar Manch</h3>
+                <p>A unified digital platform connecting 3,000+ stakeholders in Mumbai's public distribution network. Features real-time news, secure grievance redressal, and community polls.</p>
                 <div class="card-links">
-                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="privacy-policy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
-                    <a href="delete-account.html">Support</a>
+                    <a href="support.html">Support</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="card-tag tag-green">Enterprise SaaS</span>
+                <h3>Ration Shop Manager</h3>
+                <p>Full-stack inventory and sales management solution for retail outlets. Digitizing operations to ensure 100% transparency and zero paperwork.</p>
+                <div class="card-links">
+                    <a href="privacy-policy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
                 </div>
             </div>
 
         </div>
 
-        <h2 id="about">Corporate Information</h2>
-        <p>Tydon Technologies Private Limited is a registered Indian entity committed to transparency and compliance.</p>
-        
-        <div class="legal-box">
-            <div class="data-row"><span class="label">Legal Name:</span> TYDON TECHNOLOGIES PRIVATE LIMITED</div>
-            <div class="data-row"><span class="label">CIN:</span> U62090PN2025PTC246844</div>
-            <div class="data-row"><span class="label">Status:</span> Active (Registered with MCA)</div>
-            <div class="data-row"><span class="label">Address:</span> c/o Shankar Pawar, Green, Diamond Developers 54/14A, Manchar, Ambegaon, Pune, Maharashtra, 410503, India</div>
-            <div class="data-row"><span class="label">Contact:</span> tydonincorp@gmail.com</div>
+        <div class="section-header">
+            <h2>Corporate Identity</h2>
+            <p>Transparency is at our core.</p>
+        </div>
+
+        <div class="verification-wrapper">
+            <div style="margin-bottom: 20px;">
+                <strong>TYDON TECHNOLOGIES PRIVATE LIMITED</strong> is a registered entity with the Ministry of Corporate Affairs (MCA), India.
+            </div>
+            
+            <div class="legal-grid">
+                <div class="legal-item">
+                    <label>CIN (Corporate ID)</label>
+                    <div>U62090PN2025PTC246844</div>
+                </div>
+                <div class="legal-item">
+                    <label>Registration Status</label>
+                    <div style="color: #166534; font-weight: bold;">Active</div>
+                </div>
+                <div class="legal-item">
+                    <label>Contact Email</label>
+                    <div>tydonincorp@gmail.com</div>
+                </div>
+            </div>
+            
+            <div class="legal-item" style="margin-top: 20px;">
+                <label>Registered Office Address</label>
+                <div>c/o Shankar Pawar, Green, Diamond Developers 54/14A, Manchar, Ambegaon, Pune, Maharashtra, 410503, India</div>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2025 TYDON TECHNOLOGIES PRIVATE LIMITED</p>
-        <p style="font-size: 0.8rem; margin-top: 10px;">
-            <a href="privacy-policy.html">Privacy Policy</a> | 
-            <a href="terms.html">Terms of Service</a> | 
-            <a href="delete-account.html">Data Deletion</a>
+        <p>&copy; 2025 Tydon Technologies Pvt. Ltd. All rights reserved.</p>
+        <p>
+            <a href="privacy-policy.html" style="color:inherit; text-decoration:none; margin:0 10px;">Privacy Policy</a> | 
+            <a href="terms.html" style="color:inherit; text-decoration:none; margin:0 10px;">Terms of Use</a> | 
+            <a href="delete-account.html" style="color:inherit; text-decoration:none; margin:0 10px;">Data Deletion</a>
         </p>
     </footer>
 
 </body>
 </html>
+
